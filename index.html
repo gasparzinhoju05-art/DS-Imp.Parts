@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>DS AdesivoS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>DS AdesivoS</h1>
+    <div>Ds Imp PartS</div>
+</header>
+
+<div class="banner">
+    <h2>Adesivos Vinílicos • Papéis • Materiais de Recorte</h2>
+
+    <div class="barra-pesquisa">
+        <input type="text" placeholder="Buscar produtos...">
+    </div>
+
+    <h5>
+        ✔ Produto a pronta entrega
+        🚚 Envio em 24h
+        📦 Envio para todo Brasil
+    </h5>
+</div>
+
+<a href="carrinho.html" class="botao-carrinho">
+    🛒 Carrinho (<span id="contador-carrinho">0</span>)
+</a>
+
+<div class="categorias">
+    <button onclick="filtrar('todos')">Todos</button>
+    <button onclick="filtrar('papel')">Papéis</button>
+    <button onclick="filtrar('adesivo')">Adesivos</button>
+    <button onclick="filtrar('corte')">Materiais de corte</button>
+
+    <div class="avaliacao">
+        ⭐⭐⭐⭐⭐
+        <span>(2.472 avaliações)</span>
+    </div>
+</div>
+
+<section class="produtos">
+
+    <div class="card">
+        <a href="produto.html?id=1">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m96vlp35igxl9d.webp">
+            <h3>Papel Fotográfico Off Paper A4 50 Folhas High Glossy 180g</h3>
+        </a>
+        <p class="preco">R$ 29,90</p>
+        <button onclick="addCarrinho('Papel Fotográfico A4', 29.90
+        , 'https://down-br.img.susercontent.com/file/br-11134207-7r98o-m96vlp35igxl9d.webp')">
+            Adicionar ao carrinho
+        </button>
+        <button>Comprar</button>
+    </div>
+
+    <div class="card">
+        <a href="produto.html?id=2">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m96vlp35igxl9d.webp">
+            <h3>Papel Fotográfico Off Paper A4 50 Folhas High Glossy 180g</h3>
+        </a>
+        <p class="preco">R$ 29,90</p>
+        <button onclick="addCarrinho('Papel Fotográfico A4', 29.90, 'https://down-br.img.susercontent.com/file/br-11134207-7r98o-m96vlp35igxl9d.webp')">
+            Adicionar ao carrinho
+        </button>
+        <button>Comprar</button>
+    </div>
+
+    <div class="card">
+        <a href="produto.html?id=3">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m96vlp35igxl9d.webp">
+            <h3>Papel Fotográfico Off Paper A4 50 Folhas High Glossy 180g</h3>
+        </a>
+        <p class="preco">R$ 29,90</p>
+        <button onclick="addCarrinho('Papel Fotográfico Glossy', 29.90, 'https://down-br.img.susercontent.com/file/br-11134207-7r98o-m96vlp35igxl9d.webp')">
+            Adicionar ao carrinho
+        </button>
+        <button>Comprar</button>
+    </div>
+
+    <div class="card">
+        <a href="produto.html?id=4">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m96vlp35igxl9d.webp">
+            <h3>Papel Fotográfico Off Paper A4 50 Folhas High Glossy 180g</h3>
+        </a>
+        <p class="preco">R$ 29,90</p>
+        <button onclick="addCarrinho('Papel Fotográfico Off Paper A4 50 Folhas High Glossy 180g', 29.90, 
+        'https://down-br.img.susercontent.com/file/br-11134207-7r98o-m90ntd661vr6bc.webp')">
+            Adicionar ao carrinho
+        </button>
+        <button>Comprar</button>
+    </div>
+
+    <div class="card">
+        <a href="produto.html?id=5">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m90ntd661vr6bc.webp">
+            <h3>Papel Glossy Fotográfico Dupla Face 120g/m² 50 folhas</h3>
+        </a>
+        <p class="preco">R$ 26,90</p>
+        <button onclick="addCarrinho(
+'Papel Glossy Fotográfico Dupla Face 120g/m² 50 folhas',
+26.90,
+'https://down-br.img.susercontent.com/file/br-11134207-7r98o-m90ntd661vr6bc.webp'
+)">
+    Adicionar ao carrinho
+</button>
+        <button>Comprar agora</button>  
+    </div>
+
+    <div class="card">
+        <a href="produto.html?id=6">
+            <img src="https://down-br.img.susercontent.com/file/0e7ef53d1c94e014b444bbc38484f768.webp">
+            <h3>Kit com 50 Envelopes COEX 15x20cm</h3>
+        </a>
+        <p class="preco">R$ 34,99</p>
+        <button onclick="addCarrinho(
+'Kit com 50 Envelopes COEX 15x20cm',
+34.99,
+'https://down-br.img.susercontent.com/file/0e7ef53d1c94e014b444bbc38484f768.webp'
+)">
+            Adicionar ao carrinho
+        </button>
+        <button>Comprar agora</button>
+    </div>
+
+    <div class="card">
+        <a href="produto.html?id=7">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m0p9oai5au8w98.webp">
+            <h3>Papel Fotográfico Adesivo Matte Fosco 115g/m²</h3>
+        </a>
+        <p class="preco">R$ 26,90</p>
+        <button onclick="addCarrinho('Papel Fotográfico Adesivo Matte Fosco 115g/m²', 26.90,
+            'https://down-br.img.susercontent.com/file/br-11134207-7r98o-m0p9oai5au8w98.webp'
+        )">
+            Adicionar ao carrinho
+        </button>
+        <button>Comprar agora</button>
+    </div>
+
+    <div class="card">
+        <a href="produto.html?id=8">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m0p9oai5au8w98.webp">
+            <h3>Papel Fotográfico Adesivo Matte Fosco 130g/m²</h3>
+        </a>
+        <p class="preco">R$ 26,90</p>
+        <button onclick="addCarrinho('Papel Fotográfico Adesivo Matte Fosco 130g/m²', 26.90,
+            'https://down-br.img.susercontent.com/file/br-11134207-7r98o-m0p9oai5au8w98.webp'
+        )">
+            Adicionar ao carrinho
+        </button>
+        <button>Comprar agora</button>
+    </div>
+
+    <div class="card">
+        <a href="produto.html?id=9">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m5usfem1ezwwb0.webp">
+            <h3>Adesivo Vinil 100% Transparente Off Paper</h3>
+        </a>
+        <p class="preco">R$ 49,90</p>
+        <button onclick="addCarrinho('Adesivo Vinil Transparente Off Paper', 49.90,
+            'https://down-br.img.susercontent.com/file/br-11134207-7r98o-m5usfem1ezwwb0.webp'
+        )">
+            Adicionar ao carrinho
+        </button>
+        <button>Comprar agora</button>
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+<div id="toast" class="toast">Produto adicionado ao carrinho</div>
+</body>
+
+</html>
