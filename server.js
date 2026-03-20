@@ -1,24 +1,35 @@
 const express = require("express");
 const axios = require("axios");
+const path = require("path");
 
 const app = express();
 
 app.use(express.json());
-app.use(express.static(__dirname + "/public"));
 
-// 🔥 COLE SEU TOKEN NOVO AQUI
-const TOKEN = process.env.TOKEN;
+// ✅ SERVIR ARQUIVOS CORRETAMENTE
+app.use(express.static(path.join(__dirname)));
 
+// 🔐 TOKEN (Render)
+const TOKEN = process.env.TOKEN_MELHOR_ENVIO;
+
+// ✅ ROTA PRINCIPAL (corrigida)
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
+
+// 🚚 CALCULAR FRETE
 app.post("/calcular-frete", async (req, res) => {
-
     try {
-
         const { cep } = req.body;
+
+        if (!TOKEN) {
+            return res.status(500).json({ erro: "Token não configurado" });
+        }
 
         const response = await axios.post(
             "https://melhorenvio.com.br/api/v2/me/shipment/calculate",
             {
-                from: { postal_code: "03621010" }, // CEP da sua loja
+                from: { postal_code: "03621010" },
                 to: { postal_code: cep },
                 products: [
                     {
@@ -35,10 +46,8 @@ app.post("/calcular-frete", async (req, res) => {
             {
                 headers: {
                     Authorization: `Bearer ${TOKEN}`,
-                    "Content-Type": "application/json",
-                    "Accept": "application/json",
-                    "content-type": "application/json"
-
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
                 }
             }
         );
@@ -46,12 +55,12 @@ app.post("/calcular-frete", async (req, res) => {
         res.json(response.data);
 
     } catch (error) {
-        console.log(error.response?.data || error.message);
+        console.log("ERRO FRETE:", error.response?.data || error.message);
         res.status(500).json({ erro: "Erro ao calcular frete" });
     }
-
 });
 
+// 🚀 INICIAR SERVIDOR
 app.listen(process.env.PORT || 3000, () => {
     console.log("Servidor rodando");
 });
