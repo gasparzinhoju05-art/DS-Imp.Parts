@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Admin - Pedidos</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #111;
+    color: #fff;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.pedido {
+    background: #1c1c1c;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+.item {
+    font-size: 14px;
+    color: #ccc;
+}
+</style>
+
+</head>
+<body>
+
+<h1>📦 Pedidos</h1>
+
+<div id="lista"></div>
+
+<script>
+
+async function carregarPedidos(){
+
+    let resposta = await fetch("/pedidos");
+    let pedidos = await resposta.json();
+
+    let lista = document.getElementById("lista");
+
+    lista.innerHTML = "";
+
+    pedidos.reverse().forEach(p => {
+
+        let div = document.createElement("div");
+        div.classList.add("pedido");
+
+        div.innerHTML = `
+            <h3>Pedido #${p.id}</h3>
+            <p><strong>Nome:</strong> ${p.nome}</p>
+            <p><strong>Telefone:</strong> ${p.telefone}</p>
+            <p><strong>Endereço:</strong> ${p.endereco}</p>
+            <p><strong>Total:</strong> R$ ${p.total}</p>
+            <h4>Itens:</h4>
+            ${p.itens.map(i => `<p class="item">- ${i.nome}</p>`).join("")}
+        `;
+
+        lista.appendChild(div);
+
+    });
+
+}
+
+carregarPedidos();
+
+</script>
+
+</body>
+</html>
